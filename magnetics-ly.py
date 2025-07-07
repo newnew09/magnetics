@@ -1,11 +1,10 @@
-
 import streamlit as st
 
-st.title("Hello QQ 👋")
+st.title("Hello👋")
 st.markdown(
     """ 
 
-    **I will :rainbow[love] you forever!!!**\n
+    **I will :rainbow[show] you how to use it**\n
 
 
 
