@@ -14,17 +14,17 @@ def flux_waveforms():
     # 创建三列布局，将第一张图片放在中间列以实现居中显示
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
-        st.image(r"E:\Python-work\playground\streamlit-demo\UIM.jpg", width=img_width)
+        st.image(r"UIM.jpg", width=img_width)
 
     # 创建三列布局显示下方的三张图片
     col4, col5, col6 = st.columns(3)
 
     with col4:
-        st.image(r"E:\Python-work\playground\streamlit-demo\SINE.jpg", width=img_width)
+        st.image(r"SINE.jpg", width=img_width)
     with col5:
-        st.image(r"E:\Python-work\playground\streamlit-demo\TWO_SQ.jpg", width=img_width)
+        st.image(r"TWO_SQ.jpg", width=img_width)
     with col6:
-        st.image(r"E:\Python-work\playground\streamlit-demo\THREE_SQ.jpg", width=img_width)
+        st.image(r"THREE_SQ.jpg", width=img_width)
 
     # 用户选择激励电压波形
     waveform_choice = st.selectbox("选择激励电压波形", ["正弦波", "两电平方波", "三电平方波"])
@@ -33,7 +33,7 @@ def flux_waveforms():
         # 创建三列布局，将选中的正弦波图片放在中间列以实现居中显示
         col7, col8, col9 = st.columns([1, 1, 1])
         with col8:
-            sine_img = st.image(r"E:\Python-work\playground\streamlit-demo\SINE.jpg", width=img_width, caption="选中的波形")
+            sine_img = st.image(r"SINE.jpg", width=img_width, caption="选中的波形")
         # 加上单位，设置电感值精度到小数点后6位
         L = st.number_input("电感值 (μH)", value=1.0, step=0.000001, format="%.6f") * 1e-6  # 转换为 H
         f = st.number_input("频率 (kHz)", value=50.0) * 1e3  # 转换为 Hz
@@ -52,7 +52,7 @@ def flux_waveforms():
         # 创建三列布局，将选中的两电平方波图片放在中间列以实现居中显示
         col10, col11, col12 = st.columns([1, 1, 1])
         with col11:
-            two_sq_img = st.image(r"E:\Python-work\playground\streamlit-demo\TWO_SQ.jpg", width=img_width, caption="选中的波形")
+            two_sq_img = st.image(r"TWO_SQ.jpg", width=img_width, caption="选中的波形")
         # 加上单位，设置电感值精度到小数点后6位
         L = st.number_input("电感值 (μH)", value=1.0, step=0.000001, format="%.6f") * 1e-6  # 转换为 H
         f = st.number_input("频率 (kHz)", value=50.0) * 1e3  # 转换为 Hz
@@ -86,7 +86,7 @@ def flux_waveforms():
         # 创建三列布局，将选中的三电平方波图片放在中间列以实现居中显示
         col13, col14, col15 = st.columns([1, 1, 1])
         with col14:
-            three_sq_img = st.image(r"E:\Python-work\playground\streamlit-demo\THREE_SQ.jpg", width=img_width, caption="选中的波形")
+            three_sq_img = st.image(r"THREE_SQ.jpg", width=img_width, caption="选中的波形")
         # 加上单位，设置电感值精度到小数点后6位
         L = st.number_input("电感值 (μH)", value=1.0, step=0.000001, format="%.6f") * 1e-6  # 转换为 H
         f = st.number_input("频率 (kHz)", value=50.0) * 1e3  # 转换为 Hz
