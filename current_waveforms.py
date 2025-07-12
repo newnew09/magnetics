@@ -139,7 +139,7 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         ax1.plot(t, i_mag, 'r-', linewidth=3, label='Magnetizing current')
         ax1.plot(t[target_idx], i_primary[target_idx], 'ko', markerfacecolor='k')
         ax1.axhline(y=im_peak, color='gray', linestyle='--', alpha=0.5)
-        ax1.set_title(f'Primary current({primary_amp:.2f}A) vs Magnetizing current(Peak{im_peak:.2f}A)', fontsize=18)
+        ax1.set_title(f'Ipri({primary_amp:.2f}A) vs Imag({im_peak:.2f}A)', fontsize=18)
         ax1.set_xlabel('Time (s)', fontsize=18)
         ax1.set_ylabel('Current (A)', fontsize=18)
         # 调整坐标轴刻度字体大小
@@ -155,7 +155,7 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         ax2.plot(t, i_secondary, 'g-', linewidth=3, label='Secondary current')
         ax2.plot(t, np.abs(i_secondary), 'm--', linewidth=3, label='Absolute')
         ax2.plot([t[0], t[-1]], [avg_secondary, avg_secondary], 'k:', linewidth=3, label='Average')
-        ax2.set_title(f'Secondary current (Average={avg_secondary:.3f}A)', fontsize=18)
+        ax2.set_title(f'Isec (Average={avg_secondary:.3f}A)', fontsize=18)
         ax2.set_xlabel('Time (s)', fontsize=18)
         ax2.set_ylabel('Current (A)', fontsize=18)
         # 调整坐标轴刻度字体大小
