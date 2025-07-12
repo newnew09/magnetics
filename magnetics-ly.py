@@ -13,7 +13,7 @@ def main():
       st.title(':rainbow[LLC谐振变换器简易波形分析]')
 
         # 插入图片
-      image_path = r"E:\Python-work\playground\streamlit-demo\LLC.jpg"
+      image_path = r"LLC.jpg"
       if os.path.exists(image_path):
             st.image(image_path, caption='LLC 谐振变换器 ', use_container_width=True)
       else:
