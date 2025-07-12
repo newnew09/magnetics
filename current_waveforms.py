@@ -135,8 +135,8 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
 
         # 绘制原边和励磁电流
-        ax1.plot(t, i_primary, 'b-', linewidth=3, label='Primary current')
-        ax1.plot(t, i_mag, 'r-', linewidth=3, label='Magnetizing current')
+        ax1.plot(t, i_primary, 'b-', linewidth=3, label='Ipri')
+        ax1.plot(t, i_mag, 'r-', linewidth=3, label='Imag')
         ax1.plot(t[target_idx], i_primary[target_idx], 'ko', markerfacecolor='k')
         ax1.axhline(y=im_peak, color='gray', linestyle='--', alpha=0.5)
         ax1.set_title(f'Ipri({primary_amp:.2f}A) vs Imag({im_peak:.2f}A)', fontsize=18)
@@ -152,8 +152,8 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         # ax1.legend()
 
         # 绘制副边电流
-        ax2.plot(t, i_secondary, 'g-', linewidth=3, label='Secondary current')
-        ax2.plot(t, np.abs(i_secondary), 'm--', linewidth=3, label='Absolute')
+        ax2.plot(t, i_secondary, 'g-', linewidth=3, label='Isec')
+        ax2.plot(t, np.abs(i_secondary), 'm--', linewidth=3)
         ax2.plot([t[0], t[-1]], [avg_secondary, avg_secondary], 'k:', linewidth=3, label='Average')
         ax2.set_title(f'Isec (Average={avg_secondary:.3f}A)', fontsize=18)
         ax2.set_xlabel('Time (s)', fontsize=18)
