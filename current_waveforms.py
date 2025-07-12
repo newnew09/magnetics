@@ -135,13 +135,13 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
 
         # 绘制原边和励磁电流
-        ax1.plot(t, i_primary, 'b-', linewidth=3, label='原边')
-        ax1.plot(t, i_mag, 'r-', linewidth=3, label='励磁')
-        ax1.plot(t[target_idx], i_primary[target_idx], 'ko', markerfacecolor='k', label='对齐点')
+        ax1.plot(t, i_primary, 'b-', linewidth=3, label='Primary current')
+        ax1.plot(t, i_mag, 'r-', linewidth=3, label='Magnetizing current')
+        ax1.plot(t[target_idx], i_primary[target_idx], 'ko', markerfacecolor='k')
         ax1.axhline(y=im_peak, color='gray', linestyle='--', alpha=0.5)
-        ax1.set_title(f'原边({primary_amp:.2f}A) vs 励磁(峰值{im_peak:.2f}A)', fontsize=18)
-        ax1.set_xlabel('时间 (s)', fontsize=18)
-        ax1.set_ylabel('电流 (A)', fontsize=18)
+        ax1.set_title(f'Primary current({primary_amp:.2f}A) vs Magnetizing current(Peak{im_peak:.2f}A)', fontsize=18)
+        ax1.set_xlabel('Time (s)', fontsize=18)
+        ax1.set_ylabel('Current (A)', fontsize=18)
         # 调整坐标轴刻度字体大小
         ax1.tick_params(axis='both', which='major', labelsize=16)  # 主刻度字体大小
         ax1.tick_params(axis='both', which='minor', labelsize=14)  # 副刻度字体大小（可选）
@@ -152,12 +152,12 @@ def waveforms_dcx(v_out, i_out, lm, freq, n):
         # ax1.legend()
 
         # 绘制副边电流
-        ax2.plot(t, i_secondary, 'g-', linewidth=3, label='副边电流')
-        ax2.plot(t, np.abs(i_secondary), 'm--', linewidth=3, label='绝对值')
-        ax2.plot([t[0], t[-1]], [avg_secondary, avg_secondary], 'k:', linewidth=3, label='平均值')
-        ax2.set_title(f'副边电流 (均值={avg_secondary:.3f}A)', fontsize=18)
-        ax2.set_xlabel('时间 (s)', fontsize=18)
-        ax2.set_ylabel('电流 (A)', fontsize=18)
+        ax2.plot(t, i_secondary, 'g-', linewidth=3, label='Secondary current')
+        ax2.plot(t, np.abs(i_secondary), 'm--', linewidth=3, label='Absolute')
+        ax2.plot([t[0], t[-1]], [avg_secondary, avg_secondary], 'k:', linewidth=3, label='Average')
+        ax2.set_title(f'Secondary current (Average={avg_secondary:.3f}A)', fontsize=18)
+        ax2.set_xlabel('Time (s)', fontsize=18)
+        ax2.set_ylabel('Current (A)', fontsize=18)
         # 调整坐标轴刻度字体大小
         ax2.tick_params(axis='both', which='major', labelsize=16)  # 主刻度字体大小
         ax2.tick_params(axis='both', which='minor', labelsize=14)  # 副刻度字体大小（可选）
