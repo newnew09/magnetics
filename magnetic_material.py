@@ -21,7 +21,7 @@ def material_dmr51w():
     st.title(':rainbow[磁性材料 DMR51W 损耗特性分析]')
 
     # 加载数据
-    df = pd.read_csv("E:/Python-work/playground/dmr51w/data/DMR51W.csv")
+    df = pd.read_csv("data/DMR51W.csv")
 
     # 主界面筛选条件
     st.subheader("筛选条件")
