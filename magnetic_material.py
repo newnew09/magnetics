@@ -195,16 +195,16 @@ def material_dmr51w():
             B_plot, P_pred, '--',
             color=color_map[freq],
             alpha=0.8,
-            label=f'趋势线: {formula_text}' if freq == selected_frequencies[0] else ""
+            label=f'Trend line: {formula_text}' if freq == selected_frequencies[0] else ""
         )
 
     # 添加图例
     ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
     # 设置标题和坐标轴标签
-    ax.set_title('单位体积磁芯损耗与磁通密度的关系')
-    ax.set_xlabel('磁通密度 B (T)')
-    ax.set_ylabel('单位体积磁芯损耗 PV (W/m^3)')
+    ax.set_title('DMR51W')
+    ax.set_xlabel('B(T)')
+    ax.set_ylabel('Pv(W/m^3)')
 
     # 添加网格线
     ax.grid(True, linestyle='--', alpha=0.7)
