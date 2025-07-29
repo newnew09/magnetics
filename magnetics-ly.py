@@ -6,7 +6,7 @@ from flux_waveforms import flux_waveforms
 
 def main():
     # 侧边栏功能选择
-    st.sidebar.title('功能选择')
+    st.sidebar.title('部分功能选择')
     page = st.sidebar.radio(' ', ['磁性材料分析','磁通波形分析','电流波形分析' ])
 
     if page == '电流波形分析':
